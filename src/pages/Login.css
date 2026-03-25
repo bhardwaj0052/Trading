@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.login-container {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,197,94,0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(16,185,129,0.2), transparent 40%),
+    #0b0f19;
+
+
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.login-card {
+  width: 420px;
+  padding: 40px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 0 80px rgba(34,197,94,0.35),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  position: relative;
+  z-index: 10;
+
+  color: white;
+}
+
+.login-card::before {
+  content: "";
+  position: absolute;
+
+  inset: -40px;
+
+  background: radial-gradient(
+    circle,
+    rgba(34,197,94,0.25),
+    transparent 70%
+  );
+
+  z-index: -1;
+}
+
+.card-header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.login-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #55b640;
+}
+
+.register-link {
+  color: #22c55e;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+
+  color: #4ade80;
+
+  text-shadow: 0 0 8px rgba(34,197,94,0.8);
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  margin-bottom: 0.5rem;
+}
+
+.input-box-container {
+  display: flex;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 9999px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+
+.input-box-container:hover {
+  border-color: #22c55e;
+  box-shadow: 0 0 10px rgba(34,197,94,0.4);
+}
+
+.input-box-container:focus-within {
+  border-color: #22c55e;
+  box-shadow: 0 0 12px #22c55e;
+}
+
+.country-code {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  background-color: transparent;
+  border-right: 1px solid rgba(255,255,255,0.2);
+
+  color: #cbd5e1;
+
+  font-size: 0.95rem;
+}
+
+.input-field {
+  flex-grow: 1;
+  padding: 0.9rem 1rem;
+
+  border: none;
+  outline: none;
+
+  font-size: 0.95rem;
+
+  background: transparent;
+  color: #cbd5e1;}
+
+.input-field-full {
+  width: 100%;
+  padding: 0.9rem 1rem;
+
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 9999px;
+
+  font-size: 0.95rem;
+
+  outline: none;
+
+  background: rgba(255,255,255,0.05);
+  color: #cbd5e1;}
+
+.input-field-full:focus,
+.input-box-container:focus-within {
+  border-color: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+
+  background: linear-gradient(90deg,#22c55e,#16a34a);
+
+  border: none;
+  border-radius: 9999px;
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+
+  margin-top: 0.8rem;
+}
+
+.login-btn:active {
+  transform: scale(0.98);
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 0 12px rgba(34,197,94,0.45);
+}
+
+.card-button {
+  padding: 8px 20px;
+
+  border-radius: 25px;
+
+  border: 1px solid rgba(34,197,94,0.5);
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+
+  color: #22c55e;
+
+  font-weight: 600;
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.card-button:hover {
+  background: #22c55e;
+  color: white;
+
+  box-shadow:
+    0 0 10px #22c55e,
+    0 0 25px rgba(34,197,94,0.5);
+
+  transform: translateY(-2px);
+}
+
+/* Animated trading graph line */
+
+/* 3D glow behind card */
+
+.login-container::before {
+  content: "";
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(34,197,94,0.35),
+    rgba(34,197,94,0.15),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(-100px,-50px);
+  }
+
+  50% {
+    transform: translate(100px,50px);
+  }
+
+  100% {
+    transform: translate(-50px,80px);
+  }
+}
+
+/* Trading grid background */
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(34,197,94,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,197,94,0.07) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  pointer-events: none;
+}
+
+.input-icon {
+  color: #22c55e;
+  margin-left: 15px;
+  margin-right: 10px;
+}
+
+.login-card {
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.register-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+
+  border-radius: 30px;
+
+  background: linear-gradient(90deg,#22c55e,#16a34a);
+
+  border: none;
+
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.register-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(34,197,94,0.6);
+}
+
+.register-text {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #cbd5e1;
+  text-align: center;
+}
+
+.forgot-link {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+
+  color: #22c55e;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+
+.forgot-link:hover {
+  color: #4ade80;
+  text-decoration: underline;
+}

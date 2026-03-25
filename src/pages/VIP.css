@@ -1,0 +1,124 @@
+/* VIP.css */
+.vip-page-dark {
+    min-height: 100vh;
+    background-color: #0f172a;
+    color: #f8fafc;
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 40px;
+}
+
+/* Header */
+.vip-nav-header {
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    padding: 20px 20px 60px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    position: relative;
+}
+
+.back-circle {
+    position: absolute;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 50%;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.nav-title { font-size: 18px; font-weight: 800; color: white; margin: 0; }
+
+/* Content Wrapper */
+.vip-content { padding: 0 16px; margin-top: -35px; }
+
+/* Main Card */
+.vip-main-card {
+    background: #1e293b;
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    border: 1px solid rgba(255,255,255,0.05);
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.vip-info-text .rank-tag { font-size: 10px; color: #94a3b8; letter-spacing: 1px; }
+.vip-info-text .rank-name { font-size: 32px; font-weight: 900; color: white; margin: 4px 0; }
+.vip-info-text .inv-pill { background: rgba(34, 197, 94, 0.15); color: #4ade80; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 600; }
+
+/* Surface Cards */
+.vip-surface-card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.no-padding { padding: 20px 0; }
+.list-title { padding: 0 20px 15px 20px; font-size: 16px; color: white; margin: 0; }
+
+/* Progress Bar */
+.flex-between { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.p-title { display: flex; align-items: center; gap: 6px; font-size: 14px; color: #94a3b8; }
+.p-percent { font-weight: bold; color: #22c55e; }
+.bar-track { height: 8px; background: #334155; border-radius: 4px; overflow: hidden; }
+.bar-fill { height: 100%; background: #22c55e; border-radius: 4px; }
+.p-helper { font-size: 12px; color: #94a3b8; text-align: center; margin-top: 12px; }
+
+/* Roadmap Items */
+.road-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.road-item.active { background: rgba(34, 197, 94, 0.05); }
+.road-left { display: flex; align-items: center; gap: 12px; }
+.road-name { font-weight: 700; font-size: 15px; }
+.road-right { text-align: right; }
+.road-cost { display: block; font-size: 14px; font-weight: 600; color: #22c55e; }
+
+.status-dot { font-size: 9px; font-weight: 800; padding: 2px 8px; border-radius: 10px; }
+.is-now { background: #22c55e; color: white; }
+.is-done { background: rgba(34, 197, 94, 0.2); color: #4ade80; }
+.is-off { background: #334155; color: #64748b; }
+
+/* Badge Styling */
+.badge-base {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: relative;
+}
+
+.badge-lg { width: 100px; height: 100px; font-size: 24px; }
+.badge-sm { width: 40px; height: 40px; font-size: 14px; }
+
+.badge-text { font-weight: 900; z-index: 2; font-style: italic; }
+.badge-bg-star { position: absolute; opacity: 0.2; font-size: 50px; }
+
+/* VIP Badge Colors (Matching your data) */
+.badge-color-slate { background: linear-gradient(135deg, #64748b, #334155); color: white; }
+.badge-color-amber { background: linear-gradient(135deg, #fbbf24, #d97706); color: #451a03; }
+.badge-color-blue { background: linear-gradient(135deg, #60a5fa, #2563eb); color: white; }
+.badge-color-purple { background: linear-gradient(135deg, #a78bfa, #7c3aed); color: white; }
+.badge-color-pink { background: linear-gradient(135deg, #f472b6, #db2777); color: white; }
+.badge-color-emerald { background: linear-gradient(135deg, #34d399, #059669); color: white; }
+.badge-color-red { background: linear-gradient(135deg, #f87171, #b91c1c); color: white; }
+.badge-color-yellow { background: linear-gradient(135deg, #facc15, #ca8a04); color: #451a03; }
+
+.ring-current { border: 3px solid #22c55e; box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);  margin-top: 20px; }
+.ring-open { border: 2px solid #4ade80; }
+.ring-lock { border: 1px solid #475569; opacity: 0.6; }
