@@ -1,89 +1,157 @@
-/* Splash.css */
-
 .splash-container {
+  position: relative;
+  overflow: hidden;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+
   min-height: 100vh;
-  padding: 1rem;
-  background-color: #ffffff; /* Tailwind's gray-100 */
-  font-family: 'Inter', sans-serif;
+  padding: 20px;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(34,197,94,0.25), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(16,185,129,0.2), transparent 40%),
+    #0b0f19;
 }
 
-.splash-content {
-  max-width: 45rem; /* md width */
-  width: 100%;
-  background-color: #ffffff;
-  border-radius: 1.5rem; /* 3xl rounded */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: center;
-  padding: 2rem 1.5rem;
+/* grid background */
+
+.splash-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(34,197,94,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34,197,94,0.07) 1px, transparent 1px);
+
+  background-size: 60px 60px;
+
+  pointer-events: none;
 }
+
+/* glow background */
+
+.splash-container::before {
+  content: "";
+  position: absolute;
+
+  width: 600px;
+  height: 600px;
+
+  background: radial-gradient(
+    circle,
+    rgba(34,197,94,0.35),
+    rgba(34,197,94,0.15),
+    transparent 70%
+  );
+
+  filter: blur(120px);
+
+  animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+@keyframes glowMove {
+  0% {
+    transform: translate(-100px,-50px);
+  }
+  50% {
+    transform: translate(100px,50px);
+  }
+  100% {
+    transform: translate(-50px,80px);
+  }
+}
+
+/* card */
+
+.splash-card {
+  width: 420px;
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow:
+    0 0 80px rgba(34,197,94,0.35),
+    inset 0 0 20px rgba(255,255,255,0.05);
+
+  position: relative;
+  z-index: 10;
+
+  color: white;
+
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+/* floating animation */
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* image */
 
 .splash-image {
+  width: 180px;
+  margin-bottom: 25px;
+  filter: drop-shadow(0 0 10px rgba(34,197,94,0.6));
+}
+
+/* title */
+
+.splash-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #55b640;
+  margin-bottom: 15px;
+}
+
+/* subtitle */
+
+.splash-subtitle {
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* button */
+
+.splash-btn {
   width: 100%;
-  max-width: 20rem; /* like max-w-sm */
-  height: auto;
-  margin: 0 auto 2rem auto;
-  border-radius: 1rem;
-  object-fit: contain;
-}
+  padding: 14px;
 
-/* Title */
-.title1 {
-  font-size: 2rem; /* text-3xl */
-  font-weight: 800; /* extrabold */
-  color: #111827; /* gray-900 */
-  line-height: 1.25;
-  margin-bottom: 1rem;
-}
+  border-radius: 30px;
 
-@media (min-width: 640px) {
-  .title {
-    font-size: 2.25rem; /* text-4xl */
-  }
-}
+  background: linear-gradient(90deg,#22c55e,#16a34a);
 
-@media (min-width: 768px) {
-  .title {
-    font-size: 3rem; /* text-5xl */
-  }
-}
-
-/* Subtitle */
-.subtitle {
-  font-size: 0.9rem; /* text-sm */
-  color: #4b5563; /* gray-600 */
-  margin-bottom: 2rem;
-}
-
-@media (min-width: 640px) {
-  .subtitle {
-    font-size: 1rem; /* text-base */
-  }
-}
-
-/* Button */
-.continue-btn {
-  width: 100%;
-  padding: 0.75rem 1.5rem;
-  background-color: #facc15; /* yellow-400 */
-  color: #ffffff;
-  font-weight: 600;
   border: none;
-  border-radius: 1rem; /* 2xl */
+
+  color: white;
+  font-weight: 600;
+
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(234, 179, 8, 0.3);
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-.continue-btn:hover {
-  background-color: #f59e0b; /* yellow-500 */
-  transform: scale(1.05);
+.splash-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(34,197,94,0.6);
 }
 
-.continue-btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(250, 204, 21, 0.5);
+.splash-btn:active {
+  transform: scale(0.98);
 }

@@ -1,12 +1,11 @@
 import React, { useEffect } from "react";
 import "./Splash.css";
 import { useNavigate } from "react-router-dom";
-import Cookies from "js-cookie"; // <-- install with: npm install js-cookie
+import Cookies from "js-cookie";
 
 function Splash() {
   const navigate = useNavigate();
 
-  // Auto-check for token in cookies
   useEffect(() => {
     const token = Cookies.get("2ndtredingWeb");
     if (token) {
@@ -20,31 +19,32 @@ function Splash() {
 
   return (
     <div className="splash-container">
-      <div className="splash-content">
-        {/* Image */}
+      <div className="splash-card">
+
         <img
           src="/splash.png"
-          alt="Building Wealth"
+          alt="Trading"
           className="splash-image"
         />
 
-        {/* Title */}
-        <h1 className="title1">
+        <h1 className="splash-title">
           Building Wealth
           <br />
           Together
         </h1>
 
-        {/* Subtitle */}
-        <p className="subtitle">
-          A smarter way to invest – gain confidence, track progress and build
-          wealth over time with tailored insights and expert guidance.
+        <p className="splash-subtitle">
+          A smarter way to invest — track progress, gain confidence
+          and build wealth with powerful insights.
         </p>
 
-        {/* Continue Button */}
-        <button className="continue-btn" onClick={handleContinue}>
-          Continue
+        <button
+          className="splash-btn"
+          onClick={handleContinue}
+        >
+          Get Started
         </button>
+
       </div>
     </div>
   );
